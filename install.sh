@@ -142,6 +142,14 @@ install_base () {
     for x in ${MAIN_CONFS[@]};do
         ln_conf "$CUR_LOC/config/$x"
     done
+
+    # necessary components for rust completion
+    rust_extra=`which rls`
+    [ -z "$rust_extra" ] && rustup component add rls rust-analysis rust-src
+    
+    # python components
+    pyr='which pyright'
+    [ -z "$pyr" ] || `npm install -g pyright`
 }
 
 ul_vim () {
