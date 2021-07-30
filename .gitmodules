@@ -1,0 +1,3 @@
+[submodule "config/vim/bundle/ale"]
+	path = config/vim/bundle/ale
+	url = https://github.com/dense-analysis/ale
